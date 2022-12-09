@@ -12,24 +12,7 @@ namespace Day9
 
             List<(int, int)> listOfTailCoOrdinatesPart1 = new List<(int, int)>();
             List<(int, int)> listOfTailCoOrdinatesPart2 = new List<(int, int)>();
-            var ropePart1 = Enumerable.Repeat(new Coordinate(0, 0), 2).ToArray();
-            var ropePart2 = Enumerable.Repeat(new Coordinate(0, 0), 10).ToArray();
-
-            foreach (string line in input)
-            {
-                string Direction = line.Split(' ')[0];
-                int movementStep = Convert.ToInt32(line.Split(' ')[1]);
-                for (int i = 1; i <= movementStep; i++)
-                {
-                    MoveHead(ref ropePart1, Direction);
-                    if (!listOfTailCoOrdinatesPart1.Contains((ropePart1[1].x, ropePart1[1].y)))
-                    {
-                        listOfTailCoOrdinatesPart1.Add((ropePart1[1].x, ropePart1[1].y));
-                    }
-
-                }
-
-            }
+          
             CalculateUniquePositionsForTail(input, 2);
 
             CalculateUniquePositionsForTail(input, 10);
